@@ -1,0 +1,19 @@
+# json是在各个编程语言中流通的数据格式，负责不同编程语言中的数据传递和交互
+# python数据和json数据的相互转化
+import json
+# 例如字典
+weather = {"北京": "阴", "上海": "中雨", "杭州": "小雨"}
+print(type(weather))
+# json.dumps()方法把python数据转化为json数据
+json_date = json.dumps(weather, ensure_ascii=False)  # ensure_ascii=False不使用ASCII码转换，可以将中文数据显示出来
+print(json_date, type(json_date))
+# json.loads()方法把json数据转化为python数据
+python_date = json.loads('{"北京": "阴", "上海": "中雨", "杭州": "小雨"}')
+print(python_date, type(python_date))
+# 列表
+An = [1, 3, 5, 7, 9]
+print(type(An))
+json_an = json.dumps(An)
+print(json_an, type(json_an))
+py_an = json.loads(json_an)
+print(py_an, type(py_an))
